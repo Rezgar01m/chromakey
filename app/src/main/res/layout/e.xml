@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#615F5F"
+    android:id="@+id/Main"
+
+    xmlns:custom="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/c"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="350dp"
+        android:background="@color/black"
+        tools:ignore="MissingConstraints">
+
+        <com.google.android.exoplayer2.ui.PlayerView
+            android:id="@+id/v"
+            app:use_controller="false"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+<!--<com.chromakeyland.view.VideoSurfaceView
+    android:id="@+id/vs"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"/>
+-->
+
+        <com.chromakeyland.view.EyeDropperx
+            android:id="@+id/eyed"
+            android:layout_width="wrap_content"
+            app:initialColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:selector="@drawable/wheel"
+            android:layout_height="wrap_content" />
+        <com.chromakeyland.AlphaMovieView
+            android:id="@+id/video_player"
+            custom:shader="@string/shader_custom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:ignore="MissingConstraints" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ImageView
+        android:id="@+id/d"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@drawable/icon_zoom"
+        app:layout_constraintBottom_toBottomOf="@+id/c"
+        tools:ignore="MissingConstraints" />
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/axView"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:clipToPadding="false"
+        android:paddingLeft="180dp"
+        android:layout_marginTop="70dp"
+        android:paddingRight="180dp"
+      />
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="1dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_gravity="center|bottom"
+        android:background="@color/white"
+        android:translationY="620dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <com.video.timeline.render.TimelineGlSurfaceView
+        android:id="@+id/fixed_thumb_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+  app:layout_constraintBottom_toTopOf="@id/ok" />
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/r1"
+        android:layout_width="wrap_content"
+
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints" />
+
+    <ImageView
+        android:id="@+id/ok"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="232dp"
+        android:src="@drawable/icon_newvideo"
+        android:layout_gravity="center|end|bottom"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.922"
+        app:layout_constraintRight_toLeftOf="@id/fab2"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints,UnknownId" />
+
+    <ImageView
+        android:id="@+id/cl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="268dp"
+        android:layout_marginBottom="216dp"
+        android:src="@drawable/close"
+        android:layout_gravity="center|start|bottom"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/ok"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:translationY="470dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/exo_controls_pause"
+        tools:ignore="MissingConstraints" />
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/design_bottom_sheet"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="@color/Edite_b"
+        android:fillViewport="true"
+        android:padding="8dp"
+        app:behavior_hideable="true"
+
+        app:behavior_peekHeight="40dp"
+        app:layout_anchor="@+id/design_bottom_sheet"
+
+        app:layout_anchorGravity="center"
+        app:layout_behavior="com.chromakeyland.placeholder.B">
+
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <SeekBar
+                android:id="@+id/ac"
+                android:tooltipText="rezgar"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+              android:layout_gravity="center" />
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="@string/app_name"
+    android:gravity="end"
+
+    />
+            <SeekBar
+                android:id="@+id/a_c"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:translationY="30dp" />
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
